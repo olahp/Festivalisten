@@ -7,6 +7,10 @@ The festival data is retrieved from various sources:
 * festivalguide.no
 * mic.no
 
+## Adding/Modifying Festivals
+
+The festivals are contained in the **js/data.js** file and are stored as a JavaScript object, so adding/modifying festivals is just a matter of inserting/editing the data directly.
+
 ## License
 
 Copyright (c) 2014 Michael Enger
