@@ -242,8 +242,11 @@
 		{
 			"name": "Spydeberg Rock",
 			"genre": "rock",
+			"location": "Spydeberg",
+			"date": "May",
 			"links": {
-				"website": "http://www.spydebergrock.no/"
+				"website": "http://www.spydebergrock.no/",
+				"facebook": "https://www.facebook.com/SpydebergRock"
 			}
 		},
 		{
