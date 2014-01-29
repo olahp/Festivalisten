@@ -48,7 +48,8 @@
 			"links": {
 				"website": "http://www.bylarm.no/",
 				"facebook": "https://www.facebook.com/bylarm"
-			}
+			},
+			"image": "bylarm.png"
 		},
 		{
 			"name": "Canal Street",
@@ -75,7 +76,8 @@
 			"links": {
 				"website": "http://www.hovefestival.com/",
 				"facebook": "https://www.facebook.com/Hovefestivalen"
-			}
+			},
+			"image": "hove.jpg"
 		},
 		{
 			"name": "Ilios",
@@ -83,7 +85,8 @@
 			"date": ["January", "February"],
 			"links": {
 				"website": "http://www.ilios.no/"
-			}
+			},
+			"image": "ilios.png"
 		},
 		{
 			"name": "Inferno",
@@ -93,7 +96,8 @@
 			"links": {
 				"website": "http://www.infernofestival.net/",
 				"facebook": "https://www.facebook.com/InfernoMetalFestival"
-			}
+			},
+			"image": "inferno.gif"
 		},
 		{
 			"name": "Jærnåttå",
@@ -357,7 +361,8 @@
 			"links": {
 				"website": "http://oyafestivalen.com/",
 				"facebook": "https://www.facebook.com/oyafestivalen"
-			}
+			},
+			"image": "oya.jpg"
 		}
 	];
 

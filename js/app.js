@@ -127,6 +127,10 @@
 				};
 			}
 
+			if (festival.image) {
+				festival.has_image = true;
+			}
+
 			element.append(Mustache.render(template, festival));
 		}
 

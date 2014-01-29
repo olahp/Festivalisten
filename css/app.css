@@ -98,8 +98,11 @@ select {
 	}
 
 .festival {
+	background: none center center;
+	background-size: cover;
 	overflow: hidden;
 	min-height: 12em;
+	text-shadow: 1px 1px 3px black;
 }
 
 	.festival .meta {
