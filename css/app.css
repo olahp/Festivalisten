@@ -1,7 +1,8 @@
 body {
 	color: #222;
 	font-family: 'Helvetica Neue', Helvetica, sans-serif;
-	margin: 80px 0 1em;
+	font-size: 12pt;
+	margin: 4.5em 0 1em;
 }
 
 footer {
@@ -12,7 +13,7 @@ footer {
 header {
 	background: #333;
 	color: #ddd;
-	height: 80px;
+	height: 3.5em;
 	left: 0;
 	padding: 0.5em;
 	position: fixed;
@@ -29,9 +30,90 @@ header {
 
 	header .controls {
 		position: absolute;
-		right: 0;
-		top: 0;
+		right: 1em;
+		top: 1em;
 	}
+
+select {
+	font-size: inherit;
+}
+
+.controls {
+	font-size: 1.25em;
+}
+
+	.controls .control {
+		display: inline;
+	}
+
+		.controls .control label {
+			display: none;
+		}
+
+	.controls .filter-date:before,
+	.controls .filter-genre:before,
+	.controls .filter-location:before,
+	.controls .sort:before {
+		color: #666;
+		font-family: FontAwesome;
+		display: inline-block;
+		text-align: center;
+		width: 1em;
+	}
+
+	.controls .filter-date:before {
+			content: "\f073";
+		}
+
+	.controls .filter-genre:before {
+		content: "\f001";
+	}
+
+	.controls .filter-location:before {
+		content: "\f041";
+	}
+
+	.controls .sort:before {
+		content: "\f160";
+	}
+
+.festival {}
+
+	.festival .meta {
+		bottom: 0;
+		position: absolute;
+	}
+
+		.festival .meta dd {
+			margin: 0.5em 0;
+		}
+
+		.festival .meta dt {
+			display: none;
+		}
+
+		.festival .meta .date:before,
+		.festival .meta .genre:before,
+		.festival .meta .location:before {
+			color: #666;
+			font-family: FontAwesome;
+			display: inline-block;
+			margin-right: 0.25em;
+			text-align: center;
+			width: 1em;
+		}
+
+		.festival .meta .date:before {
+			content: "\f073";
+		}
+
+		.festival .meta .genre:before {
+			content: "\f001";
+		}
+
+		.festival .meta .location:before {
+			content: "\f041";
+		}
 
 .festivals {}
 
@@ -44,11 +126,6 @@ header {
 		padding: 1em;
 		position: relative;
 	}
-
-		.festivals .festival .meta {
-			bottom: 0;
-			position: absolute;
-		}
 
 	.festivals .loading {
 		background: url('../images/ajax-loader.gif');

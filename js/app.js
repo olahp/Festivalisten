@@ -11,10 +11,10 @@
 				genre: "",
 				date: ""
 			},
-			filterLocation = $(".controls .filter-location"),
-			filterGenre = $(".controls .filter-genre"),
-			filterDate = $(".controls .filter-date"),
-			sortBy = $(".controls .sort-by");
+			filterLocation = $(".controls .filter-location select"),
+			filterGenre = $(".controls .filter-genre select"),
+			filterDate = $(".controls .filter-date select"),
+			sortBy = $(".controls .sort select");
 
 		this.festivals = festivals;
 		this.genres = [];

@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Festivalnorge</title>
+		<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
 		<link href="css/app.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
@@ -10,21 +11,21 @@
 			<h1>Festivalnorge</h1>
 			<p class="lead">Music festivals in Norway</p>
 			<div class="controls">
-				<div class="filter">
+				<div class="control filter filter-location">
 					<label>Location</label>
-					<select class="filter-location" name="location">
+					<select name="location">
 						<option value="">All</option>
 					</select>
 				</div>
-				<div class="filter">
+				<div class="control filter filter-genre">
 					<label>Genre</label>
-					<select class="filter-genre" name="genre">
+					<select name="genre">
 						<option value="">All</option>
 					</select>
 				</div>
-				<div class="filter">
+				<div class="control filter filter-date">
 					<label>Date</label>
-					<select class="filter-date" name="date">
+					<select name="date">
 						<option value="">All</option>
 						<option value="January">January</option>
 						<option value="February">February</option>
@@ -40,7 +41,7 @@
 						<option value="December">December</option>
 					</select>
 				</div>
-				<div class="sort">
+				<div class="control sort">
 					<label>Sort by</label>
 					<select class="sort-by" name="sort">
 						<option selected value="date">Date</option>
