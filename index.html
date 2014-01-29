@@ -9,7 +9,7 @@
 		<header>
 			<h1>Festivalnorge</h1>
 			<p class="lead">Music festivals in Norway</p>
-			<div class="filters">
+			<div class="controls">
 				<div class="filter">
 					<label>Location</label>
 					<select class="filter-location" name="location">
@@ -40,6 +40,15 @@
 						<option value="December">December</option>
 					</select>
 				</div>
+				<div class="sort">
+					<label>Sort by</label>
+					<select class="sort-by" name="sort">
+						<option selected value="date">Date</option>
+						<option value="name">Name</option>
+						<option value="location">Location</option>
+						<option value="genre">Genre</option>
+					</select>
+				</div>
 			</div>
 		</header>
 
@@ -60,7 +69,7 @@
 		<script id="template-festival" type="text/x-mustache">
 			<div class="item" data-date="{{date}}" data-genre="{{genre}}" data-location="{{location}}">
 				<div class="festival">
-					<h3>{{name}}</h3>
+					<h3 class="name">{{name}}</h3>
 					<dl class="meta">
 						{{#genre}}
 						<dt class="genre">Genre</dt>

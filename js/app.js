@@ -11,9 +11,10 @@
 				genre: "",
 				date: ""
 			},
-			filterLocation = $(".filters .filter-location"),
-			filterGenre = $(".filters .filter-genre"),
-			filterDate = $(".filters .filter-date");
+			filterLocation = $(".controls .filter-location"),
+			filterGenre = $(".controls .filter-genre"),
+			filterDate = $(".controls .filter-date"),
+			sortBy = $(".controls .sort-by");
 
 		this.festivals = festivals;
 		this.genres = [];
@@ -39,7 +40,18 @@
 		// Setup isotope
 		festivalsElement.isotope({
 			itemSelector: ".item",
-			layoutMode: "fitRows"
+			layoutMode: "fitRows",
+			getSortData: {
+				name: ".name",
+				location: "[data-location]",
+				genre: "[data-genre]",
+				date: function(itemElement) {
+					var dateString = $(itemElement).data("date"),
+						date = new Date(dateString.replace(/^(\w+).*$/, "$1") + " 1, 1988"); // oh god, so cheap
+					return date ? date.getMonth() + (dateString.search(/[^\w]/) != -1 ? 0.5 : 0) : -1;
+				}
+			},
+			sortBy: sortBy.val()
 		});
 
 		// Events
@@ -58,6 +70,11 @@
 		filterDate.on("change", function() {
 			filters.date = this.value;
 			self.filterFestivalItems(filters, festivalsElement);
+		});
+		sortBy.on("change", function() {
+			festivalsElement.isotope({
+				sortBy: this.value
+			});
 		});
 	};
 
