@@ -11,7 +11,7 @@ body {
 	color: white;
 	font-family: 'Helvetica Neue', Helvetica, sans-serif;
 	font-size: 12pt;
-	margin: 4.5em 0 1em;
+	margin: 3.5em 0 1em;
 }
 
 footer {
@@ -19,9 +19,13 @@ footer {
 	text-align: center;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
 header {
 	background: #111;
-	height: 3.5em;
+	height: 2.5em;
 	left: 0;
 	padding: 0.5em;
 	position: fixed;
@@ -32,7 +36,7 @@ header {
 
 	header h1,
 	header p {
-		font-weight: normal;
+		display: inline;
 		margin: 0;
 	}
 
@@ -40,6 +44,14 @@ header {
 		position: absolute;
 		right: 1em;
 		top: 1em;
+	}
+
+	header .fa {
+		color: #f0606b;
+	}
+
+	header .lead {
+		color: #888;
 	}
 
 select {
@@ -85,12 +97,19 @@ select {
 		content: "\f160";
 	}
 
-.festival {}
+.festival {
+	overflow: hidden;
+	min-height: 12em;
+}
 
 	.festival .meta {
 		bottom: 0;
 		position: absolute;
 	}
+
+		.festival .meta a {
+			text-decoration: none;
+		}
 
 		.festival .meta dd {
 			margin: 0.5em 0;
@@ -102,7 +121,8 @@ select {
 
 		.festival .meta .date:before,
 		.festival .meta .genre:before,
-		.festival .meta .location:before {
+		.festival .meta .location:before,
+		.festival .meta .website:before {
 			color: #888;
 			font-family: FontAwesome;
 			display: inline-block;
@@ -121,6 +141,10 @@ select {
 
 		.festival .meta .location:before {
 			content: "\f041";
+		}
+
+		.festival .meta .website:before {
+			content: "\f0ac";
 		}
 
 .festivals {}

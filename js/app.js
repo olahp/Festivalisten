@@ -111,6 +111,22 @@
 				}
 			}
 
+			if (festival.links) {
+				var website;
+				if (festival.links.website) {
+					website = festival.links.website;
+				} else {
+					for (var key in festival.links) {
+						website = festival.links[key];
+						break;
+					}
+				}
+				festival.website = {
+					url: website,
+					name: website.replace(/^(\w*:\/\/)?(www\.)?([\w\.]+).*?$/, "$3")
+				};
+			}
+
 			element.append(Mustache.render(template, festival));
 		}
 
