@@ -51,6 +51,8 @@
 
 			element.append(Mustache.render(template, festival));
 		}
+
+		element.find(".loading").remove();
 	};
 
 	/**

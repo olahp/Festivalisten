@@ -38,6 +38,13 @@ header {
 			position: absolute;
 		}
 
+	.festivals .loading {
+		background: url('../images/ajax-loader.gif');
+		height: 32px;
+		margin: 3em auto;
+		width: 32px;
+	}
+
 	.festivals .item {
 		width: 20%;
 	}
