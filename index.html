@@ -22,6 +22,24 @@
 						<option value="">All</option>
 					</select>
 				</div>
+				<div class="filter">
+					<label>Date</label>
+					<select class="filter-date" name="date">
+						<option value="">All</option>
+						<option value="January">January</option>
+						<option value="February">February</option>
+						<option value="March">March</option>
+						<option value="April">April</option>
+						<option value="May">May</option>
+						<option value="June">June</option>
+						<option value="July">July</option>
+						<option value="August">August</option>
+						<option value="September">September</option>
+						<option value="October">October</option>
+						<option value="November">November</option>
+						<option value="December">December</option>
+					</select>
+				</div>
 			</div>
 		</header>
 
@@ -40,7 +58,7 @@
 
 		<!-- Templates -->
 		<script id="template-festival" type="text/x-mustache">
-			<div class="item" data-genre="{{genre}}" data-location="{{location}}">
+			<div class="item" data-date="{{date}}" data-genre="{{genre}}" data-location="{{location}}">
 				<div class="festival">
 					<h3>{{name}}</h3>
 					<dl class="meta">

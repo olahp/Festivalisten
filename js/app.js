@@ -8,13 +8,14 @@
 		var festivalsElement = $(".festivals"),
 			filters = {
 				location: "",
-				genre: ""
+				genre: "",
+				date: ""
 			},
 			filterLocation = $(".filters .filter-location"),
-			filterGenre = $(".filters .filter-genre");
+			filterGenre = $(".filters .filter-genre"),
+			filterDate = $(".filters .filter-date");
 
 		this.festivals = festivals;
-		this.dates = [];
 		this.genres = [];
 		this.locations = [];
 
@@ -54,6 +55,10 @@
 			filters.genre = this.value;
 			self.filterFestivalItems(filters, festivalsElement);
 		});
+		filterDate.on("change", function() {
+			filters.date = this.value;
+			self.filterFestivalItems(filters, festivalsElement);
+		});
 	};
 
 	/**
@@ -68,19 +73,10 @@
 
 			if (festival.date) {
 				if (typeof festival.date == "object" && festival.date.length) {
-					for (var d = 0; d < festival.date.length; d++) {
-						if (this.dates.indexOf(festival.date[d]) == -1) {
-							this.dates.push(festival.date[d]);
-						}
-					}
 					if (festival.date.length > 2) {
 						festival.date = festival.date.join(", ");
 					} else {
 						festival.date = festival.date[0] + " - " + festival.date[1];
-					}
-				} else {
-					if (this.dates.indexOf(festival.date) == -1) {
-						this.dates.push(festival.date);
 					}
 				}
 			}
@@ -112,7 +108,9 @@
 
 		for (var key in filters) {
 			if (filters[key] != "") {
-				filter += "[data-" + key + "=" + filters[key] + "]";
+				filter += key == "date"
+					? "[data-" + key + "*=" + filters[key] + "]"
+					: "[data-" + key + "=" + filters[key] + "]";
 			}
 		}
 
