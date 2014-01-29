@@ -20,3 +20,24 @@ header {
 		font-weight: normal;
 		margin: 0;
 	}
+
+.festivals {}
+
+	.festivals h3 {
+		margin: 0 0 0.25em;
+	}
+
+	.festivals .festival {
+		background: #eee;
+		padding: 1em;
+		position: relative;
+	}
+
+		.festivals .festival .meta {
+			bottom: 0;
+			position: absolute;
+		}
+
+	.festivals .item {
+		width: 20%;
+	}
