@@ -4,7 +4,7 @@
 	/**
 	 * Initialize the app - setup events and such.
 	 */
-	var Festivalnorge = function(festivals) {
+	var Festivalist = function(festivals) {
 		var festivalsElement = $(".festivals"),
 			filters = {
 				location: "",
@@ -81,7 +81,7 @@
 	/**
 	 * Create the list of festivals.
 	 */
-	Festivalnorge.prototype.createFestivalList = function(festivals, element) {
+	Festivalist.prototype.createFestivalList = function(festivals, element) {
 		var template = $("#template-festival").html(),
 			festival;
 
@@ -120,7 +120,7 @@
 	/**
 	 * Filter the festival items using isotope.
 	 */
-	Festivalnorge.prototype.filterFestivalItems = function(filters, element) {
+	Festivalist.prototype.filterFestivalItems = function(filters, element) {
 		var filter = "";
 
 		for (var key in filters) {
@@ -139,14 +139,14 @@
 	/**
 	 * Resize the cells to be square.
 	 */
-	Festivalnorge.prototype.resizeCells = function(element) {
+	Festivalist.prototype.resizeCells = function(element) {
 		var items = element.find(".festival");
 		items.css("height", items.first().width() + "px");
 	};
 
 	// Let's do this!
 	$(document).ready(function(){
-		new Festivalnorge(window.festivals);
+		new Festivalist(window.festivals);
 	});
 
 })(jQuery.noConflict());
