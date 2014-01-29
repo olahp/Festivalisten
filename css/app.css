@@ -1,7 +1,7 @@
 body {
 	color: #222;
 	font-family: 'Helvetica Neue', Helvetica, sans-serif;
-	margin: 0;
+	margin: 72px 0 1em;
 }
 
 footer {
@@ -12,13 +12,24 @@ footer {
 header {
 	background: #333;
 	color: #ddd;
+	left: 0;
 	padding: 0.5em;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 100;
 }
 
 	header h1,
 	header p {
 		font-weight: normal;
 		margin: 0;
+	}
+
+	header .filters {
+		position: absolute;
+		right: 0;
+		top: 0;
 	}
 
 .festivals {}
@@ -41,7 +52,10 @@ header {
 	.festivals .loading {
 		background: url('../images/ajax-loader.gif');
 		height: 32px;
-		margin: 3em auto;
+		left: 50%;
+		margin: -16px;
+		position: absolute;
+		top: 50%;
 		width: 32px;
 	}
 

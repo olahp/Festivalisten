@@ -9,6 +9,14 @@
 		<header>
 			<h1>Festivalnorge</h1>
 			<p class="lead">Music festivals in Norway</p>
+			<div class="filters">
+				<div class="filter">
+					<label>Location</label>
+					<select class="filter-location" name="location">
+						<option value="">All</option>
+					</select>
+				</div>
+			</div>
 		</header>
 
 		<section class="festivals"><div class="loading"></div></section>
@@ -26,7 +34,7 @@
 
 		<!-- Templates -->
 		<script id="template-festival" type="text/x-mustache">
-			<div class="item">
+			<div class="item" data-location="{{location}}">
 				<div class="festival">
 					<h3>{{name}}</h3>
 					<dl class="meta">
