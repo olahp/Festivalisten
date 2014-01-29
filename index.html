@@ -16,6 +16,12 @@
 						<option value="">All</option>
 					</select>
 				</div>
+				<div class="filter">
+					<label>Genre</label>
+					<select class="filter-genre" name="genre">
+						<option value="">All</option>
+					</select>
+				</div>
 			</div>
 		</header>
 
@@ -34,7 +40,7 @@
 
 		<!-- Templates -->
 		<script id="template-festival" type="text/x-mustache">
-			<div class="item" data-location="{{location}}">
+			<div class="item" data-genre="{{genre}}" data-location="{{location}}">
 				<div class="festival">
 					<h3>{{name}}</h3>
 					<dl class="meta">

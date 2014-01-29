@@ -7,9 +7,11 @@
 	var Festivalnorge = function(festivals) {
 		var festivalsElement = $(".festivals"),
 			filters = {
-				location: ""
+				location: "",
+				genre: ""
 			},
-			filterLocation = $(".filters .filter-location");
+			filterLocation = $(".filters .filter-location"),
+			filterGenre = $(".filters .filter-genre");
 
 		this.festivals = festivals;
 		this.dates = [];
@@ -26,6 +28,12 @@
 		$.each(this.locations, function() {
 			filterLocation.append("<option value=\"" + this + "\">" + this + "</option>");
 		});
+		this.genres.sort(function(a, b) {
+			return a.toLowerCase().localeCompare(b.toLowerCase());
+		});
+		$.each(this.genres, function() {
+			filterGenre.append("<option value=\"" + this + "\">" + this + "</option>");
+		});
 
 		// Setup isotope
 		festivalsElement.isotope({
@@ -40,6 +48,10 @@
 		});
 		filterLocation.on("change", function() {
 			filters.location = this.value;
+			self.filterFestivalItems(filters, festivalsElement);
+		});
+		filterGenre.on("change", function() {
+			filters.genre = this.value;
 			self.filterFestivalItems(filters, festivalsElement);
 		});
 	};
