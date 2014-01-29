@@ -6,7 +6,7 @@
 		{
 			"name": "by:Larm",
 			"location": "Oslo",
-			"date": ["February"," March"],
+			"date": ["February", "March"],
 			"links": {
 				"website": "http://www.bylarm.no/",
 				"facebook": "https://www.facebook.com/bylarm"
