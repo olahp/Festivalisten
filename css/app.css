@@ -108,6 +108,15 @@ select {
 	text-shadow: 1px 1px 3px black;
 }
 
+	.festival > * {
+		opacity: 0;
+		transition: opacity 0.2s;
+	}
+
+	.festival:hover > * {
+		opacity: 0.9;
+	}
+
 	.festival .meta {
 		bottom: 0;
 		position: absolute;
@@ -152,6 +161,18 @@ select {
 		.festival .meta .website:before {
 			content: "\f0ac";
 		}
+
+.festival.no-image {
+	text-shadow: none;
+}
+
+	.festival.no-image > * {
+		opacity: 0.5;
+	}
+
+	.festival.no-image:hover > * {
+		opacity: 0.9;
+	}
 
 .festivals {
 	min-height: 400px;
@@ -224,7 +245,9 @@ select {
 	.controls .control {
 		display: block;
 	}
+}
 
+@media screen and (max-width:480px) {
 	.festivals .item {
 		width: 100%;
 	}

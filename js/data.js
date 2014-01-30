@@ -11,7 +11,8 @@
 			"links": {
 				"website": "http://www.bitf.no/",
 				"facebook": "https://www.facebook.com/BackInTheFieldsRockFestival?hc_location=stream"
-			}
+			},
+			"image": "backinthefields.png"
 		},
 		{
 			"name": "Bergenfest",
@@ -20,7 +21,8 @@
 			"links": {
 				"website": "http://bergenfest.no/",
 				"facebook": "https://www.facebook.com/bergenfest"
-			}
+			},
+			"image": "bergenfest.png"
 		},
 		{
 			"name": "Blastfest",
@@ -30,7 +32,8 @@
 			"links": {
 				"website": "http://www.blastfest.no/",
 				"facebook": "https://www.facebook.com/blastfestival"
-			}
+			},
+			"image": "blastfest.png"
 		},
 		{
 			"name": "Bukta",
@@ -39,7 +42,8 @@
 			"links": {
 				"website": "http://bukta.no/",
 				"facebook": "https://www.facebook.com/buktafestivalen"
-			}
+			},
+			"image": "bukta.png"
 		},
 		{
 			"name": "by:Larm",
@@ -58,7 +62,8 @@
 			"links": {
 				"website": "http://www.canalstreet.no/",
 				"facebook": "https://www.facebook.com/csarendal"
-			}
+			},
+			"image": "canalstreet.png"
 		},
 		{
 			"name": "Eikerapen Roots Festival",
@@ -67,7 +72,8 @@
 			"links": {
 				"website": "http://eikerapen.com/",
 				"facebook": "https://www.facebook.com/eikerapenroots"
-			}
+			},
+			"image": "eikerapen.png"
 		},
 		{
 			"name": "Hovefestivalen",
@@ -97,7 +103,7 @@
 				"website": "http://www.infernofestival.net/",
 				"facebook": "https://www.facebook.com/InfernoMetalFestival"
 			},
-			"image": "inferno.gif"
+			"image": "inferno.jpg"
 		},
 		{
 			"name": "Jærnåttå",
@@ -106,7 +112,8 @@
 			"links": {
 				"website": "http://www.jaerdagen.no/",
 				"facebook": "https://www.facebook.com/jaerdagen"
-			}
+			},
+			"image": "jaernatta.jpg"
 		},
 		{
 			"name": "Karmøygeddon",
@@ -115,7 +122,8 @@
 			"date": "May",
 			"links": {
 				"website": "http://karmoygeddon.no/"
-			}
+			},
+			"image": "karmoygeddon.png"
 		},
 		{
 			"name": "Landskappleiken",
@@ -125,7 +133,8 @@
 			"links": {
 				"website": "http://www.landskappleiken.no/",
 				"facebook": "https://www.facebook.com/Landskappleiken"
-			}
+			},
+			"images": "landskappleiken.png"
 		},
 		{
 			"name": "Maijazz",
@@ -135,7 +144,8 @@
 			"links": {
 				"website": "http://www.maijazz.no/",
 				"facebook": "https://www.facebook.com/maijazz"
-			}
+			},
+			"image": "maijazz.png"
 		},
 		{
 			"name": "Måkeskrik",
@@ -144,7 +154,8 @@
 			"links": {
 				"website": "http://www.maakeskrik.no/",
 				"facebook": "https://www.facebook.com/maakeskriket"
-			}
+			},
+			"image": "maakeskrik.png"
 		},
 		{
 			"name": "Månefestivalen",
@@ -153,7 +164,8 @@
 			"links": {
 				"website": "http://www.maanefestivalen.no/",
 				"facebook": "https://www.facebook.com/maanefestivalen"
-			}
+			},
+			"image": "maanefestivalen.png"
 		},
 		{
 			"name": "Nattjazz",
@@ -163,7 +175,8 @@
 			"links": {
 				"website": "http://www.nattjazz.no/",
 				"facebook": "https://www.facebook.com/nattjazz"
-			}
+			},
+			"image": "nattjazz.png"
 		},
 		{
 			"name": "Notodden Bluesfestival",
@@ -173,7 +186,8 @@
 			"links": {
 				"website": "http://www.bluesfest.no/",
 				"facebook": "https://www.facebook.com/pages/Notodden-Blues-Festival/124652855699"
-			}
+			},
+			"image": "notoddenbluesfestival.png"
 		},
 		{
 			"name": "Operafestukene",
@@ -192,7 +206,8 @@
 			"links": {
 				"website": "http://overoslo.no/",
 				"facebook": "https://www.facebook.com/OverOslo"
-			}
+			},
+			"image": "overoslo.png"
 		},
 		{
 			"name": "PolarJazz",
@@ -202,7 +217,8 @@
 			"links": {
 				"website": "http://www.polarjazz.no/",
 				"facebook": "https://www.facebook.com/Polarjazz"
-			}
+			},
+			"image": "polarjazz.png"
 		},
 		{
 			"name": "Rjukan Rockfestival",
@@ -212,7 +228,8 @@
 			"links": {
 				"website": "http://www.rjukan-rockfestival.no/",
 				"facebook": "https://www.facebook.com/Rjukanrock"
-			}
+			},
+			"image": "rjukanrockfestival.png"
 		},
 		{
 			"name": "Rock Mot Rus",
@@ -222,7 +239,8 @@
 			"links": {
 				"website": "http://rockmotrus.no",
 				"facebook": "https://www.facebook.com/rockmotrus1"
-			}
+			},
+			"image": "rockmotrus.png"
 		},
 		{
 			"name": "Skånevik Bluesfestival",
@@ -241,7 +259,8 @@
 			"links": {
 				"website": "http://sonispherefestivals.com/",
 				"facebook": "https://www.facebook.com/sonispherefestival"
-			}
+			},
+			"image": "sonisphere.png"
 		},
 		{
 			"name": "Spydeberg Rock",
@@ -251,7 +270,8 @@
 			"links": {
 				"website": "http://www.spydebergrock.no/",
 				"facebook": "https://www.facebook.com/SpydebergRock"
-			}
+			},
+			"image": "spydebergrock.png"
 		},
 		{
 			"name": "Stavernfestivalen",
@@ -260,7 +280,8 @@
 			"links": {
 				"website": "http://www.stavernfestivalen.no/",
 				"facebook": "https://www.facebook.com/pages/Stavernfestivalen/194523477224"
-			}
+			},
+			"image": "stavernfestivalen.png"
 		},
 		{
 			"name": "Steinkjerfestivalen",
@@ -268,7 +289,8 @@
 			"date": "June",
 			"links": {
 				"website": "http://steinkjerfestivalen.no/"
-			}
+			},
+			"image": "steinkjerfestivalen.png"
 		},
 		{
 			"name": "Til Dovre Faller",
@@ -276,7 +298,8 @@
 			"date": "September",
 			"links": {
 				"facebook": "https://www.facebook.com/tildovrefaller"
-			}
+			},
+			"image": "tildovrefaller.png"
 		},
 		{
 			"name": "Tons of Rock",
@@ -286,7 +309,8 @@
 			"links": {
 				"website": "http://tonsofrock.no/",
 				"facebook": "https://www.facebook.com/TonsOfRockFestival"
-			}
+			},
+			"image": "tonsofrock.jpeg"
 		},
 		{
 			"name": "Tradjazzweekend",
@@ -295,7 +319,8 @@
 			"date": ["January", "February"],
 			"links": {
 				"website": "http://www.tradjazzweekend.no/"
-			}
+			},
+			"image": "tradjazz.png"
 		},
 		{
 			"name": "Trollrock",
@@ -314,7 +339,8 @@
 			"links": {
 				"website": "http://www.trondheimcalling.no/",
 				"facebook": "https://www.facebook.com/trondheimcalling"
-			}
+			},
+			"image": "trondheimcalling.png"
 		},
 		{
 			"name": "Trondheim Metal Fest",
@@ -324,7 +350,8 @@
 			"links": {
 				"website": "http://trondheimmetalfest.no/",
 				"facebook": "https://www.facebook.com/TrondheimMetalFest"
-			}
+			},
+			"image": "trondheimmetalfest.jpg"
 		},
 		{
 			"name": "Trænafestivalen",
@@ -333,7 +360,8 @@
 			"links": {
 				"website": "http://www.trena.net/",
 				"facebook": "https://www.facebook.com/Trenafestivalen"
-			}
+			},
+			"image": "trenafestivalen.png"
 		},
 		{
 			"name": "Vinjerock",
@@ -342,7 +370,8 @@
 			"links": {
 				"website": "http://www.vinjerock.no/",
 				"facebook": "https://www.facebook.com/vinjerock"
-			}
+			},
+			"image": "vinjerock.png"
 		},
 		{
 			"name": "Vossa Jazz",
@@ -352,7 +381,8 @@
 			"links": {
 				"website": "http://www.vossajazz.no/",
 				"facebook": "https://www.facebook.com/vossajazz"
-			}
+			},
+			"image": "vossajazz.png"
 		},
 		{
 			"name": "Øya Festival",
