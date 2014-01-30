@@ -134,7 +134,7 @@
 				"website": "http://www.landskappleiken.no/",
 				"facebook": "https://www.facebook.com/Landskappleiken"
 			},
-			"images": "landskappleiken.png"
+			"image": "landskappleiken.jpg"
 		},
 		{
 			"name": "Maijazz",
