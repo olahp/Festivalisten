@@ -1,4 +1,4 @@
-# Festivalist
+# Festivalisten
 
 Displays music festivals in Norway in single list that's easy to filter.
 
