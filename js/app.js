@@ -123,7 +123,7 @@
 				}
 				festival.website = {
 					url: website,
-					name: website.replace(/^(\w*:\/\/)?(www\.)?([\w\.]+).*?$/, "$3")
+					name: website.replace(/^(\w*:\/\/)?(www\.)?([\w\.-]+).*?$/, "$3")
 				};
 			}
 
