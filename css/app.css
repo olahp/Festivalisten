@@ -179,3 +179,53 @@ select {
 	.festivals .item {
 		width: 20%;
 	}
+
+@media screen and (max-width:1024px) {
+	.festivals .item {
+		width: 25%;
+	}
+}
+
+@media screen and (max-width:920px) {
+	body {
+		margin-top: 0;
+	}
+
+	header {
+		height: auto;
+		position: static;
+	}
+
+	header .controls {
+		margin: 0.5em 0;
+		position: static;
+	}
+}
+
+@media screen and (max-width:768px) {
+	.festivals .item {
+		width: 33.3%;
+	}
+}
+
+@media screen and (max-width:620px) {
+	.festivals .item {
+		width: 50%;
+	}
+}
+
+@media screen and (max-width:535px) {
+	header h1,
+	header p {
+		display: block;
+		margin: 0;
+	}
+
+	.controls .control {
+		display: block;
+	}
+
+	.festivals .item {
+		width: 100%;
+	}
+}
