@@ -6,6 +6,7 @@ The festival data is retrieved from various sources:
 
 * festivalguide.no
 * mic.no
+* [Wikipedia](http://no.wikipedia.org/wiki/Liste_over_norske_musikkfestivaler)
 
 ## Adding/Modifying Festivals
 
