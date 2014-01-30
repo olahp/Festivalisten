@@ -162,6 +162,10 @@ select {
 			content: "\f0ac";
 		}
 
+	.festival .name {
+		font-size: 2em;
+	}
+
 .festival.no-image {
 	text-shadow: none;
 }
