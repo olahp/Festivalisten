@@ -7,7 +7,7 @@ a:hover {
 }
 
 body {
-	background: #181d24;
+	background: #2d3540;
 	color: white;
 	font-family: 'Helvetica Neue', Helvetica, sans-serif;
 	font-size: 12pt;
@@ -15,12 +15,13 @@ body {
 }
 
 footer {
-	background: #2d3540;
-	font-size: 0.75em;
-	margin-top: 2em;
-	padding: 2em 0;
-	text-align: center;
+	font-size: 0.85em;
+	padding: 0.5em 1em;
 }
+
+	footer p {
+		margin: 0.2em;
+	}
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
@@ -179,7 +180,7 @@ select {
 	}
 
 .festivals {
-	min-height: 400px;
+	background: #181d24;
 }
 
 	.festivals h3 {
