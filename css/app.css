@@ -194,13 +194,8 @@ select {
 	}
 
 	.festivals .loading {
-		background: url('../images/ajax-loader.gif');
-		height: 32px;
-		left: 50%;
-		margin: -16px;
-		position: absolute;
-		top: 50%;
-		width: 32px;
+		background: url('../images/ajax-loader.gif') center center no-repeat;
+		height: 10em;
 	}
 
 	.festivals .item {
