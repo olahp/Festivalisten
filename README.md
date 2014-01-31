@@ -1,13 +1,32 @@
 # Festivalisten
 
-Displays music festivals in Norway in single list that's easy to filter.
+Music festivals in Norway.
 
-The festival data is retrieved from various sources:
+## Data
 
-* festivalguide.no
-* mic.no
+The festival data is retrieved and managed from various sources:
+
+* [Festivalguiden](http://www.festivalguide.no/?main=events&hva=musikkfestival)
+* [Listen to Norway](http://www.mic.no/symfoni/kontakt.nsf/bedrifttype_e?OpenView&Start=1&Count=10000&Expand=14.1#14.1)
 * [Wikipedia](http://no.wikipedia.org/wiki/Liste_over_norske_musikkfestivaler)
+* [last.fm](http://www.last.fm/festivals/+place/Norway)
 
-## Adding/Modifying Festivals
+You can get direct access to the data (in JSON format) if you want to do something awesome with it: http://michaelenger.github.io/Festivalisten/data/festivals.json
 
-The festivals are contained in the **js/data.js** file and are stored as a JavaScript object, so adding/modifying festivals is just a matter of inserting/editing the data directly.
+## Contributing
+
+Any help in keeping the list of festivals up-to-date is appreciated. The list is contained in the **data/festivals.json** file and follow this format:
+
+```javascript
+{
+	"name": "Example Festival",
+	"genre": "example", // optional
+	"location": "Townville",
+	"date": "January", // if the festival spans over many months use an array: ["March", "April"]
+	"links": {
+		"website": "http://example.com",
+		"facebook": "http://facebook.com/example" // currently not used for anything
+	},
+	"image": "example.png" // image is relative to the **images** folder
+}
+```

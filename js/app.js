@@ -4,9 +4,17 @@
 	/**
 	 * Initialize the app - setup events and such.
 	 */
-	var Festivalisten = function(festivals) {
-		var festivalsElement = $(".festivals"),
-			filters = {
+	var Festivalisten = function(element) {
+		this.element = element;
+		this.festivals = [];
+		this.genres = [];
+		this.locations = [];
+
+		this.loadData(this.setupInterface.bind(this));
+	};
+
+	Festivalisten.prototype.setupInterface = function() {
+		var filters = {
 				location: "",
 				genre: "",
 				date: ""
@@ -16,29 +24,8 @@
 			filterDate = $(".controls .filter-date select"),
 			sortBy = $(".controls .sort select");
 
-		this.festivals = festivals;
-		this.genres = [];
-		this.locations = [];
-
-		this.createFestivalList(festivals, festivalsElement);
-		this.resizeCells(festivalsElement);
-
-		// Filters
-		this.locations.sort(function(a, b) {
-			return a.toLowerCase().localeCompare(b.toLowerCase());
-		});
-		$.each(this.locations, function() {
-			filterLocation.append("<option value=\"" + this + "\">" + this + "</option>");
-		});
-		this.genres.sort(function(a, b) {
-			return a.toLowerCase().localeCompare(b.toLowerCase());
-		});
-		$.each(this.genres, function() {
-			filterGenre.append("<option value=\"" + this + "\">" + this + "</option>");
-		});
-
-		// Setup isotope
-		festivalsElement.isotope({
+		// Isotope
+		this.element.isotope({
 			itemSelector: ".item",
 			layoutMode: "fitRows",
 			getSortData: {
@@ -54,8 +41,17 @@
 			sortBy: sortBy.val()
 		});
 
+		// Filters
+		$.each(this.locations, function() {
+			filterLocation.append("<option value=\"" + this + "\">" + this + "</option>");
+		});
+		$.each(this.genres, function() {
+			filterGenre.append("<option value=\"" + this + "\">" + this + "</option>");
+		});
+
 		// Events
-		var self = this;
+		var self = this,
+			festivalsElement = this.element;
 		$(window).on("resize", function() {
 			self.resizeCells(festivalsElement);
 		});
@@ -72,7 +68,7 @@
 			self.filterFestivalItems(filters, festivalsElement);
 		});
 		sortBy.on("change", function() {
-			festivalsElement.isotope({
+			this.element.isotope({
 				sortBy: this.value
 			});
 		});
@@ -134,6 +130,13 @@
 			element.append(Mustache.render(template, festival));
 		}
 
+		this.locations.sort(function(a, b) {
+			return a.toLowerCase().localeCompare(b.toLowerCase());
+		});
+		this.genres.sort(function(a, b) {
+			return a.toLowerCase().localeCompare(b.toLowerCase());
+		});
+
 		element.find(".loading").remove();
 	};
 
@@ -157,6 +160,24 @@
 	};
 
 	/**
+	 * Load the festival data.
+	 */
+	Festivalisten.prototype.loadData = function(callback) {
+		$.ajax({
+			url: "data/festivals.json",
+			success: function(data) {
+				this.setupFestivals(JSON.parse(data));
+				if (callback) {
+					callback();
+				}
+			}.bind(this),
+			error: function(a,b,c) {
+				console.error(a,b,c);
+			}
+		});
+	};
+
+	/**
 	 * Resize the cells to be square.
 	 */
 	Festivalisten.prototype.resizeCells = function(element) {
@@ -164,9 +185,18 @@
 		items.css("height", items.first().width() + "px");
 	};
 
+	/**
+	 * Process the data.
+	 */
+	Festivalisten.prototype.setupFestivals = function(data) {
+		this.festivals = data;
+		this.createFestivalList(this.festivals, this.element);
+		this.resizeCells(this.element);
+	};
+
 	// Let's do this!
 	$(document).ready(function(){
-		new Festivalisten(window.festivals);
+		new Festivalisten($(".festivals"));
 	});
 
 })(jQuery.noConflict());
