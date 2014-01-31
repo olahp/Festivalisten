@@ -13,67 +13,6 @@
 		this.loadData(this.setupInterface.bind(this));
 	};
 
-	Festivalisten.prototype.setupInterface = function() {
-		var filters = {
-				location: "",
-				genre: "",
-				date: ""
-			},
-			filterLocation = $(".controls .filter-location select"),
-			filterGenre = $(".controls .filter-genre select"),
-			filterDate = $(".controls .filter-date select"),
-			sortBy = $(".controls .sort select");
-
-		// Isotope
-		this.element.isotope({
-			itemSelector: ".item",
-			layoutMode: "fitRows",
-			getSortData: {
-				name: ".name",
-				location: "[data-location]",
-				genre: "[data-genre]",
-				date: function(itemElement) {
-					var dateString = $(itemElement).data("date"),
-						date = new Date(dateString.replace(/^(\w+).*$/, "$1") + " 1, 1988"); // oh god, so cheap
-					return date ? date.getMonth() + (dateString.search(/[^\w]/) != -1 ? 0.5 : 0) : -1;
-				}
-			},
-			sortBy: sortBy.val()
-		});
-
-		// Filters
-		$.each(this.locations, function() {
-			filterLocation.append("<option value=\"" + this + "\">" + this + "</option>");
-		});
-		$.each(this.genres, function() {
-			filterGenre.append("<option value=\"" + this + "\">" + this + "</option>");
-		});
-
-		// Events
-		var self = this,
-			festivalsElement = this.element;
-		$(window).on("resize", function() {
-			self.resizeCells(festivalsElement);
-		});
-		filterLocation.on("change", function() {
-			filters.location = this.value;
-			self.filterFestivalItems(filters, festivalsElement);
-		});
-		filterGenre.on("change", function() {
-			filters.genre = this.value;
-			self.filterFestivalItems(filters, festivalsElement);
-		});
-		filterDate.on("change", function() {
-			filters.date = this.value;
-			self.filterFestivalItems(filters, festivalsElement);
-		});
-		sortBy.on("change", function() {
-			this.element.isotope({
-				sortBy: this.value
-			});
-		});
-	};
-
 	/**
 	 * Create the list of festivals.
 	 */
@@ -163,18 +102,15 @@
 	 * Load the festival data.
 	 */
 	Festivalisten.prototype.loadData = function(callback) {
-		$.ajax({
-			url: "data/festivals.json",
-			success: function(data) {
-				this.setupFestivals(JSON.parse(data));
-				if (callback) {
-					callback();
-				}
-			}.bind(this),
-			error: function(a,b,c) {
-				console.error(a,b,c);
+		$.get("data/festivals.json", function(data) {
+			if (typeof data == "string") {
+				data = JSON.parse(data);
 			}
-		});
+			this.setupFestivals(data);
+			if (callback) {
+				callback();
+			}
+		}.bind(this));
 	};
 
 	/**
@@ -192,6 +128,67 @@
 		this.festivals = data;
 		this.createFestivalList(this.festivals, this.element);
 		this.resizeCells(this.element);
+	};
+
+	Festivalisten.prototype.setupInterface = function() {
+		var filters = {
+				location: "",
+				genre: "",
+				date: ""
+			},
+			filterLocation = $(".controls .filter-location select"),
+			filterGenre = $(".controls .filter-genre select"),
+			filterDate = $(".controls .filter-date select"),
+			sortBy = $(".controls .sort select");
+
+		// Isotope
+		this.element.isotope({
+			itemSelector: ".item",
+			layoutMode: "fitRows",
+			getSortData: {
+				name: ".name",
+				location: "[data-location]",
+				genre: "[data-genre]",
+				date: function(itemElement) {
+					var dateString = $(itemElement).data("date"),
+						date = new Date(dateString.replace(/^(\w+).*$/, "$1") + " 1, 1988"); // oh god, so cheap
+					return date ? date.getMonth() + (dateString.search(/[^\w]/) != -1 ? 0.5 : 0) : -1;
+				}
+			},
+			sortBy: sortBy.val()
+		});
+
+		// Filters
+		$.each(this.locations, function() {
+			filterLocation.append("<option value=\"" + this + "\">" + this + "</option>");
+		});
+		$.each(this.genres, function() {
+			filterGenre.append("<option value=\"" + this + "\">" + this + "</option>");
+		});
+
+		// Events
+		var self = this,
+			festivalsElement = this.element;
+		$(window).on("resize", function() {
+			self.resizeCells(festivalsElement);
+		});
+		filterLocation.on("change", function() {
+			filters.location = this.value;
+			self.filterFestivalItems(filters, festivalsElement);
+		});
+		filterGenre.on("change", function() {
+			filters.genre = this.value;
+			self.filterFestivalItems(filters, festivalsElement);
+		});
+		filterDate.on("change", function() {
+			filters.date = this.value;
+			self.filterFestivalItems(filters, festivalsElement);
+		});
+		sortBy.on("change", function() {
+			this.element.isotope({
+				sortBy: this.value
+			});
+		});
 	};
 
 	// Let's do this!
