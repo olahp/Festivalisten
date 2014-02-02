@@ -9,6 +9,7 @@
 		this.festivals = [];
 		this.genres = [];
 		this.locations = [];
+		this.loading = $("#loading");
 
 		this.loadData(this.setupInterface.bind(this));
 	};
@@ -75,14 +76,13 @@
 		this.genres.sort(function(a, b) {
 			return a.toLowerCase().localeCompare(b.toLowerCase());
 		});
-
-		element.find(".loading").remove();
 	};
 
 	/**
 	 * Filter the festival items using isotope.
 	 */
 	Festivalisten.prototype.filterFestivalItems = function(filters, element) {
+		this.showLoadingIndicator();
 		var filter = "";
 
 		for (var key in filters) {
@@ -93,15 +93,25 @@
 			}
 		}
 
-		element.isotope({
-			filter: filter != "" ? filter : "*"
-		});
+		setTimeout(function() { // timeout needed to show the loading indicator before the browser hangs
+			element.isotope({
+				filter: filter != "" ? filter : "*"
+			});
+		}, 100);
+	};
+
+	/**
+	 * Hide the loading indicator.
+	 */
+	Festivalisten.prototype.hideLoadingIndicator = function() {
+		this.loading.hide();
 	};
 
 	/**
 	 * Load the festival data.
 	 */
 	Festivalisten.prototype.loadData = function(callback) {
+		this.showLoadingIndicator();
 		$.get("data/festivals.json", function(data) {
 			if (typeof data == "string") {
 				data = JSON.parse(data);
@@ -155,8 +165,11 @@
 					return date ? date.getMonth() + (dateString.search(/[^\w]/) != -1 ? 0.5 : 0) : -1;
 				}
 			},
-			sortBy: sortBy.val()
+			sortBy: sortBy.val(),
+			isInitLayout: false
 		});
+		this.element.isotope('on', 'layoutComplete', this.hideLoadingIndicator.bind(this));
+		this.element.isotope('layout');
 
 		// Filters
 		$.each(this.locations, function() {
@@ -189,6 +202,13 @@
 				sortBy: this.value
 			});
 		});
+	};
+
+	/**
+	 * Show the loading indicator.
+	 */
+	Festivalisten.prototype.showLoadingIndicator = function() {
+		this.loading.show();
 	};
 
 	// Let's do this!
