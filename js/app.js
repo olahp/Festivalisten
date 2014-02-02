@@ -83,6 +83,7 @@
 	 */
 	Festivalisten.prototype.filterFestivalItems = function(filters, element) {
 		this.showLoadingIndicator();
+		this.toggleControls(false);
 		var filter = "";
 
 		for (var key in filters) {
@@ -93,11 +94,11 @@
 			}
 		}
 
-		setTimeout(function() { // timeout needed to show the loading indicator before the browser hangs
+		setTimeout(function() { // timeout needed to show the loading indicator (and hide the controls) before the browser hangs
 			element.isotope({
 				filter: filter != "" ? filter : "*"
 			});
-		}, 100);
+		}, 500);
 	};
 
 	/**
@@ -178,6 +179,9 @@
 		$.each(this.genres, function() {
 			filterGenre.append("<option value=\"" + this + "\">" + this + "</option>");
 		});
+		$(".controls select").chosen({
+			disable_search_threshold: 13
+		});
 
 		// Events
 		var self = this,
@@ -202,6 +206,10 @@
 				sortBy: this.value
 			});
 		});
+		$(".controls-toggle").on("click touch", function(e) {
+			e.preventDefault();
+			self.toggleControls();
+		});
 	};
 
 	/**
@@ -209,6 +217,19 @@
 	 */
 	Festivalisten.prototype.showLoadingIndicator = function() {
 		this.loading.show();
+	};
+
+	/**
+	 * Toggle the controls drawer.
+	 */
+	Festivalisten.prototype.toggleControls = function(visibility) {
+		var controls = $(".controls"),
+			visibility = typeof visibility != "undefined" ? visibility : !controls.is(":visible");
+		if (visibility) {
+			controls.slideDown();
+		} else {
+			controls.slideUp();
+		}
 	};
 
 	// Let's do this!

@@ -29,8 +29,8 @@ h1, h2, h3, h4, h5, h6 {
 
 header {
 	background: #111;
-	height: 2.5em;
 	left: 0;
+	min-height: 2.5em;
 	padding: 0.5em;
 	position: fixed;
 	right: 0;
@@ -44,15 +44,9 @@ header {
 		margin: 0;
 	}
 
-	header .controls {
-		position: absolute;
-		right: 1em;
-		top: 1em;
-	}
-
-	header .fa {
-		color: #f0606b;
-	}
+		header h1 .fa {
+			color: #f0606b;
+		}
 
 	header .lead {
 		color: #888;
@@ -62,12 +56,42 @@ select {
 	font-size: inherit;
 }
 
+.chosen-container {
+	font-size: 0.75em;
+	min-width: 22em;
+}
+
+	.chosen-container .chosen-drop,
+	.chosen-container .chosen-single,
+	.chosen-container-active.chosen-with-drop .chosen-single {
+		background: #181d24;
+		border: 0;
+		border-radius: 0;
+		box-shadow: none;
+		color: #ccc;
+	}
+
+	.chosen-container .chosen-results {}
+
+		.chosen-container .chosen-results li.highlighted {
+			background: #2d3540;
+		}
+
+	.chosen-container .chosen-search {}
+
+		.chosen-container .chosen-search input[type=text] {
+			background: #2d3540;
+			border: 0;
+			color: inherit;
+		}
+
 .controls {
+	display: none;
 	font-size: 1.25em;
 }
 
 	.controls .control {
-		display: inline;
+		margin: 0.25em;
 	}
 
 		.controls .control label {
@@ -99,6 +123,19 @@ select {
 
 	.controls .sort:before {
 		content: "\f160";
+	}
+
+.controls-toggle {
+	color: #888;
+	display: block;
+	font-size: 2em;
+	position: absolute;
+	right: 0.5em;
+	top: 0.25em;
+}
+
+	.controls-toggle span {
+		display: none;
 	}
 
 .festival {
@@ -236,11 +273,6 @@ select {
 		height: auto;
 		position: static;
 	}
-
-	header .controls {
-		margin: 0.5em 0;
-		position: static;
-	}
 }
 
 @media screen and (max-width:768px) {
@@ -261,13 +293,12 @@ select {
 		display: block;
 		margin: 0;
 	}
-
-	.controls .control {
-		display: block;
-	}
 }
 
 @media screen and (max-width:480px) {
+	.chosen-container {
+		min-width: calc(100% - 2em);
+	}
 	.festivals .item {
 		width: 100%;
 	}
