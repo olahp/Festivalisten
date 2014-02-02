@@ -202,9 +202,7 @@
 			self.filterFestivalItems(filters, festivalsElement);
 		});
 		sortBy.on("change", function() {
-			this.element.isotope({
-				sortBy: this.value
-			});
+			self.sortFestivalItems(this.value, festivalsElement);
 		});
 		$(".controls-toggle").on("click touch", function(e) {
 			e.preventDefault();
@@ -217,6 +215,21 @@
 	 */
 	Festivalisten.prototype.showLoadingIndicator = function() {
 		this.loading.show();
+	};
+
+	/**
+	 * Sort the festival items using isotope.
+	 */
+	Festivalisten.prototype.sortFestivalItems = function(sort, element) {
+		this.showLoadingIndicator();
+		this.toggleControls(false);
+
+		// Timeout needed to show the loading indicator (and hide the controls) before the browser hangs
+		setTimeout(function() {
+			element.isotope({
+				sortBy: sort
+			});
+		}, 500);
 	};
 
 	/**
