@@ -30,3 +30,21 @@ Any help in keeping the list of festivals up-to-date is appreciated. The list is
 	"image": "example.png" // image is relative to the **images** folder
 }
 ```
+
+## Using the update.js Script
+
+The **update.js** script is a [node.js](http://nodejs.org/) script which reads from external APIs to update the festival list.
+
+### Requirements
+
+* [node.js](http://nodejs.org/)
+* [request](https://github.com/mikeal/request)
+* [libxmljs](https://github.com/polotek/libxmljs)
+
+### Usage
+
+This command should be run inside the **Festivalisten** directory (as it tries to read the data file using a relative path).
+
+```
+node js/update.js
+```
