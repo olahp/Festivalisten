@@ -2405,7 +2405,8 @@
 		"date": "June",
 		"links": {
 			"website": "http://www.volumfestivalen.no/"
-		}
+		},
+		"image": "volum.jpg"
 	},
 	{
 		"name": "Vossa Jazz",
@@ -2448,7 +2449,8 @@
 		"date": ["May", "June"],
 		"links": {
 			"website": "http://www.wch.no/"
-		}
+		},
+		"image": "workingclasshero.jpg"
 	},
 	{
 		"name": "Xplosif",
